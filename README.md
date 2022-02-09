@@ -13,3 +13,6 @@ At Mantle we are truly building a cape system that will stand the test of time, 
 # Mantle links
 * [Mantle.gg website](https://mantle.gg)
 * [Mantle.gg cape replacer source](https://github.com/sadcenter/mantle)
+
+# Libraries 
+* [Lachee's Discord <3](https://github.com/Lachee/discord-rpc-csharp)
