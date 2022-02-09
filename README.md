@@ -11,7 +11,5 @@ Are you tired of having to purchase a cape on every single client, or annoyed wh
 At Mantle we are truly building a cape system that will stand the test of time, with focus on quality, stability, compatibility, and community.
 
 # Mantle links
-*[Mantle.gg Website](https://mantle.gg)
+* [Mantle.gg Website](https://mantle.gg)
 * [Mantle.gg Cape Replacer Source](https://github.com/sadcenter/mantle)
-
-# 
