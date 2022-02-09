@@ -15,7 +15,7 @@ namespace MantleRPC.Handler
         {
             try
             {
-                client = new DiscordRpcClient("811723701955461130");
+                client = new DiscordRpcClient("941112614145097748");
                 client.Initialize();
             }
             catch (Exception ex)
