@@ -16,3 +16,10 @@ At Mantle we are truly building a cape system that will stand the test of time, 
 
 # Libraries 
 * [Lachee's Discord <3](https://github.com/Lachee/discord-rpc-csharp)
+
+# Usage
+* Have Mantle.gg open
+* Open the program (Or compile from source)
+
+# For Mantle.gg
+Want to implement this directly into your app? Go for it, if you need help you can contact me 
