@@ -21,6 +21,9 @@ At Mantle we are truly building a cape system that will stand the test of time, 
 * In the program, paste in your Auth key in the text box and click "Add Auth"
 * Click Check Capes and it will automatically check your capes
 
+# Not all capes showing up
+If you have a specific cape not showing up please contact me and I will be glad to add it to the list
+
 # Mantle links
 * [Mantle.gg website](https://mantle.gg)
 * [Mantle.gg cape replacer source](https://github.com/sadcenter/mantle)
@@ -29,10 +32,6 @@ At Mantle we are truly building a cape system that will stand the test of time, 
 * [Lachee's Discord <3](https://github.com/Lachee/discord-rpc-csharp)
 * [Cefsharp](https://github.com/cefsharp/cefsharp)
 * [Costura.Fody](https://github.com/Fody/Costura)
-
-# Usage
-* Have Mantle.gg open
-* Open the program (Or compile from source)
 
 # For Mantle.gg
 Want to implement this directly into your app? Go for it, if you need help you can contact me 
