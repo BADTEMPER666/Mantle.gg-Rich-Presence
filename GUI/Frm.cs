@@ -33,7 +33,7 @@ namespace MantlePresenceGUI
 
         private void Frm_Load(object sender, EventArgs e)
         {
-            //browserPnl.Hide();
+            browserPnl.Hide();
             checkProcess();
             Discord.DiscordID();
             Discord.Start();
