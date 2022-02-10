@@ -33,13 +33,33 @@ namespace MantlePresenceGUI
 
         private void Frm_Load(object sender, EventArgs e)
         {
-            //browserPnl.Hide();
+            browserPnl.Hide();
         }
 
-        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
+        private void addAuthbtn_Click(object sender, EventArgs e)
+        {
+            Auth = authTxtBox.Text;
+            MantleAuth();
+        }
+
+        private void checkCapesBtn_Click(object sender, EventArgs e)
+        {
+            //refresh page once more just in case
+            chromeBrowser.ExecuteScriptAsync("window.location.reload();");
+            MantleReader();
+            Discord.Update($"Using Mantle capes", $"Capes in account: {CapeArr}");
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
         {
             Discord.Close();
             Cef.Shutdown();
+            Close();
+        }
+
+        private void miniBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         public void checkProcess()
@@ -89,8 +109,8 @@ namespace MantlePresenceGUI
         {
             try
             {
-                chromeBrowser.ExecuteScriptAsync($"document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.auth = {Auth}");
-                MantleReader();
+                chromeBrowser.ExecuteScriptAsync($"document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.auth = `{Auth}`");
+                chromeBrowser.ExecuteScriptAsync("window.location.reload();");
             }
             catch (Exception ex)
             {
@@ -100,23 +120,17 @@ namespace MantlePresenceGUI
         
         public void MantleReader()
         {
-            //string src = chromeBrowser.GetSourceAsync().ToString();
-            //MessageBox.Show(src, Application.ProductName);
-            //if (src.Contains("Black"))
-            //{
-              //  CapeArr.Append("Black Cape");
-            //}
-           // if (src.Contains("NameMC Vote"))
-            //{
-               // CapeArr.Append("NameMC Cape");
-            //}
-        }
-
-        private void addAuthbtn_Click(object sender, EventArgs e)
-        {
-            Auth = authTxtBox.Text;
-            MantleAuth();
-            chromeBrowser.ExecuteScriptAsync("window.location.reload();");
+            string src = chromeBrowser.GetSourceAsync().Result;
+            if (src.Contains("Black"))
+            {
+                CapeArr.Append("Black Cape");
+                MessageBox.Show("Black cape is active!");
+            }
+            if (src.Contains("NameMC Vote"))
+            {
+                CapeArr.Append("NameMC Cape");
+                MessageBox.Show("NameMC cape is active!");
+            }
         }
     }
 }
