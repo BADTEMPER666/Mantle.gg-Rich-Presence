@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MantlePresenceGUI.Handler
 {
@@ -20,7 +21,7 @@ namespace MantlePresenceGUI.Handler
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Error occured. Error: {ex.Message}");
+                MessageBox.Show($"Error occured. Error: {ex.Message}", Application.ProductName);
             }
         }
 
@@ -28,7 +29,6 @@ namespace MantlePresenceGUI.Handler
         {
             try
             {
-                DiscordID();
                 client.SetPresence(new RichPresence()
                 {
                     Details = $"Using Mantle capes",
@@ -42,7 +42,7 @@ namespace MantlePresenceGUI.Handler
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Error occured. Error: {ex.Message}");
+                MessageBox.Show($"Error occured. Error: {ex.Message}");
             }
         }
 
@@ -63,7 +63,7 @@ namespace MantlePresenceGUI.Handler
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Error occured. Error: {ex.Message}");
+                MessageBox.Show($"Error occured. Error: {ex.Message}", Application.ProductName);
             }
         }
 

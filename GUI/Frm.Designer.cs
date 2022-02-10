@@ -44,9 +44,9 @@
             // 
             // browserPnl
             // 
-            this.browserPnl.Location = new System.Drawing.Point(323, 157);
+            this.browserPnl.Location = new System.Drawing.Point(32, 132);
             this.browserPnl.Name = "browserPnl";
-            this.browserPnl.Size = new System.Drawing.Size(10, 10);
+            this.browserPnl.Size = new System.Drawing.Size(318, 152);
             this.browserPnl.TabIndex = 0;
             // 
             // authTxtBox

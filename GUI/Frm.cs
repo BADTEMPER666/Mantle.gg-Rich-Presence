@@ -33,7 +33,10 @@ namespace MantlePresenceGUI
 
         private void Frm_Load(object sender, EventArgs e)
         {
-            browserPnl.Hide();
+            //browserPnl.Hide();
+            checkProcess();
+            Discord.DiscordID();
+            Discord.Start();
         }
 
         private void addAuthbtn_Click(object sender, EventArgs e)
@@ -47,13 +50,12 @@ namespace MantlePresenceGUI
             //refresh page once more just in case
             chromeBrowser.ExecuteScriptAsync("window.location.reload();");
             MantleReader();
-            Discord.Update($"Using Mantle capes", $"Capes in account: {CapeArr}");
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            Discord.Close();
             Cef.Shutdown();
+            Discord.Close();
             Close();
         }
 
@@ -69,19 +71,13 @@ namespace MantlePresenceGUI
                 Process[] proc = Process.GetProcessesByName("Mantle");
                 if (proc.Length == 0)
                 {
-                    System.Console.WriteLine("Mantle.gg is not running. Please restart the app for Discord Presence to work!");
-                    System.Console.ReadLine();
-                }
-                else
-                {
-                    System.Console.WriteLine("Mantle.gg Rich Presence started!");
-                    Discord.Start();
-                    System.Console.ReadLine();
+                    MessageBox.Show("Mantle.gg is not running. Please restart the app for Discord Presence to work!", Application.ProductName);
+                    Environment.Exit(0);
                 }
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Error occured. Error: {ex.Message}");
+                MessageBox.Show($"Error occured. Error: {ex.Message}", Application.ProductName);
             }
         }
 
@@ -97,7 +93,6 @@ namespace MantlePresenceGUI
                 // Add it to the form and fill it to the game panel
                 browserPnl.Controls.Add(chromeBrowser);
                 chromeBrowser.Dock = DockStyle.Fill;
-                checkProcess();
             }
             catch (Exception ex)
             {
@@ -121,14 +116,18 @@ namespace MantlePresenceGUI
         public void MantleReader()
         {
             string src = chromeBrowser.GetSourceAsync().Result;
+
             if (src.Contains("Black"))
             {
-                MessageBox.Show("Black cape is active!");
+                CapeArr = new List<string>(CapeArr) { "Black Cape" }.ToArray();
             }
             if (src.Contains("NameMC Vote"))
             {
-                MessageBox.Show("NameMC cape is active!");
+                CapeArr = new List<string>(CapeArr) { "NameMc Cape" }.ToArray();
             }
+            var List = (string.Join(", ", CapeArr));
+            Discord.Update("Using Mantle capes", $"Capes in account: {List.ToString()}");
+            MessageBox.Show($"Items detected: {List}", Application.ProductName);
         }
     }
 }
