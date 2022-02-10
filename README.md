@@ -19,6 +19,8 @@ coming soon...
 
 # Libraries 
 * [Lachee's Discord <3](https://github.com/Lachee/discord-rpc-csharp)
+* [Cefsharp](https://github.com/cefsharp/cefsharp)
+* [Costura.Fody](https://github.com/Fody/Costura)
 
 # Usage
 * Have Mantle.gg open
