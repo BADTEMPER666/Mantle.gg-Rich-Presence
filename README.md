@@ -23,3 +23,6 @@ At Mantle we are truly building a cape system that will stand the test of time, 
 
 # For Mantle.gg
 Want to implement this directly into your app? Go for it, if you need help you can contact me 
+
+# Copyright
+Mantle.gg Rich Presence is not affiliated with Mojang Studios, Mantle.gg themselves, or third party Minecraft clients. This is a totally independent thing
