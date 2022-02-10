@@ -36,7 +36,7 @@ namespace MantleRPC.Handler
                     Assets = new Assets()
                     {
                         LargeImageKey = "mantle",
-                        LargeImageText = "https://mantle.gg/",
+                        LargeImageText = "https://github.com/BADTEMPER666/Mantle.gg-Rich-Presence",
                     }
                 });
             }
